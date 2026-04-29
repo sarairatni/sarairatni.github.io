@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top  = e.clientY + 'px';
         });
-        document.querySelectorAll('a, button, .skill-pill, .proj-card, .stat-box').forEach(el => {
+        document.querySelectorAll('a, button, .tech-box, .proj-card, .stat-box, .edu-card').forEach(el => {
             el.addEventListener('mouseenter', () => cursorDot.style.transform = 'translate(-50%,-50%) scale(2)');
             el.addEventListener('mouseleave', () => cursorDot.style.transform = 'translate(-50%,-50%) scale(1)');
         });
@@ -18,17 +18,57 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── Navbar scroll class ── */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    /* ── Hamburger menu ── */
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
+    /* ── PILL NAV: floating blob that follows hover / active section ── */
+    const blob          = document.getElementById('navBlob');
+    const navItemsWrap  = document.getElementById('navItemsWrap');
+    const navItems      = document.querySelectorAll('.nav-item');
+
+    function moveBlob(el) {
+        blob.style.opacity = '1';
+        blob.style.width   = el.offsetWidth + 'px';
+        blob.style.left    = el.offsetLeft  + 'px';
+    }
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', () => moveBlob(item));
     });
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => navLinks.classList.remove('open'));
+
+    navItemsWrap.addEventListener('mouseleave', () => {
+        const active = navItemsWrap.querySelector('.nav-item.active');
+        if (active) moveBlob(active);
+        else blob.style.opacity = '0';
+    });
+
+    /* ── Active section tracking (updates blob + item color) ── */
+    const sections = document.querySelectorAll('section[id]');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.id;
+            navItems.forEach(item => {
+                const isActive = item.dataset.sec === id;
+                item.classList.toggle('active', isActive);
+                if (isActive && !navItemsWrap.matches(':hover')) moveBlob(item);
+            });
+        });
+    }, { threshold: 0.35 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ── Mobile burger toggle ── */
+    const burger    = document.getElementById('navBurger');
+    const navMobile = document.getElementById('navMobile');
+
+    burger.addEventListener('click', () => {
+        navMobile.classList.toggle('open');
+    });
+
+    navMobile.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => navMobile.classList.remove('open'));
     });
 
     /* ── Typing animation ── */
@@ -50,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 800);
 
     /* ── Scroll reveal with stagger ── */
-    const staggerParents = document.querySelectorAll('.skill-pills, .projects-grid, .about-stats-grid');
+    const staggerParents = document.querySelectorAll('.skill-pills, .tech-grid, .projects-grid, .about-stats-grid');
     staggerParents.forEach(parent => {
-        parent.querySelectorAll('.reveal').forEach((el, i) => {
-            el.style.transitionDelay = `${i * 75}ms`;
+        parent.querySelectorAll('.reveal, .tech-box').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 70}ms`;
         });
     });
 
@@ -64,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
@@ -98,19 +138,5 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
-
-    /* ── Active nav link on scroll ── */
-    const sections = document.querySelectorAll('section[id]');
-    const navAnchors = document.querySelectorAll('nav a');
-    const activeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navAnchors.forEach(a => a.style.color = '');
-                const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-                if (active) active.style.color = 'var(--violet)';
-            }
-        });
-    }, { threshold: 0.4 });
-    sections.forEach(s => activeObserver.observe(s));
 
 });

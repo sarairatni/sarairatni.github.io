@@ -6,7 +6,7 @@
     <title>Sara Iratni | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -14,20 +14,31 @@
 
 <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- NAVBAR -->
+<!-- NAVBAR — floating pill -->
 <header class="navbar" id="navbar">
-    <div class="nav-inner">
-        <a href="#" class="logo">SI<span>.</span></a>
-        <nav id="navLinks">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <a href="mailto:ms_iratni@esi.dz" class="nav-cta">Say Hello</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
+    <div class="nav-pill" id="navPill">
+        <a href="#" class="logo-pill">SI<span>.</span></a>
+        <div class="nav-items-wrap" id="navItemsWrap">
+            <div class="nav-blob" id="navBlob"></div>
+            <a href="#about"     class="nav-item" data-sec="about">    <i class="fas fa-user"></i>          <span>About</span></a>
+            <a href="#education" class="nav-item" data-sec="education"><i class="fas fa-graduation-cap"></i> <span>Education</span></a>
+            <a href="#skills"    class="nav-item" data-sec="skills">   <i class="fas fa-code"></i>           <span>Skills</span></a>
+            <a href="#projects"  class="nav-item" data-sec="projects"> <i class="fas fa-folder-open"></i>   <span>Projects</span></a>
+            <a href="#contact"   class="nav-item" data-sec="contact">  <i class="fas fa-envelope"></i>      <span>Contact</span></a>
+        </div>
+        <a href="mailto:ms_iratni@esi.dz" class="nav-hire">Hire Me</a>
+        <!-- mobile toggle -->
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+            <span></span><span></span>
         </button>
+    </div>
+    <!-- mobile dropdown -->
+    <div class="nav-mobile" id="navMobile">
+        <a href="#about"     data-sec="about">About</a>
+        <a href="#education" data-sec="education">Education</a>
+        <a href="#skills"    data-sec="skills">Skills</a>
+        <a href="#projects"  data-sec="projects">Projects</a>
+        <a href="#contact"   data-sec="contact">Contact</a>
     </div>
 </header>
 
@@ -83,7 +94,7 @@
 ═══════════════════════════════════════ -->
 <section id="about" class="about-section alt-bg reveal-section">
     <div class="section-wrap">
-        <div class="chip">Who I Am</div>
+        <div class="chip">01 — About</div>
         <h2 class="s-title">About Me</h2>
         <div class="about-grid">
             <div class="about-copy">
@@ -115,53 +126,148 @@
 </section>
 
 <!-- ═══════════════════════════════════════
+     EDUCATION
+═══════════════════════════════════════ -->
+<section id="education" class="edu-section reveal-section">
+    <div class="section-wrap">
+        <div class="chip">02 — Education</div>
+        <h2 class="s-title">Academic Background</h2>
+        <div class="edu-timeline">
+
+            <!-- ESI -->
+            <div class="edu-item reveal">
+                <div class="edu-year-col">
+                    <span class="edu-yr">2022</span>
+                    <span class="edu-yr-sep">↓</span>
+                    <span class="edu-yr">2027</span>
+                </div>
+                <div class="edu-dot-col">
+                    <div class="edu-dot"></div>
+                    <div class="edu-vline"></div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-top">
+                        <div class="edu-school-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="edu-school-info">
+                            <h3>École Nationale Supérieure d'Informatique <span class="edu-abbr">(ESI)</span></h3>
+                            <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</p>
+                        </div>
+                        <div class="edu-status-badge">In progress</div>
+                    </div>
+                    <p class="edu-degree">State Engineer Degree in Computer Science <span class="edu-parens">(Bac+5 — equiv. Master of Engineering)</span></p>
+                    <div class="edu-cycles">
+                        <div class="edu-cycle cycle-active">
+                            <div class="cycle-period">2024 — 2027</div>
+                            <div class="cycle-body">
+                                <strong>Superior Cycle</strong>
+                                <p>Specialization: Information Systems &amp; Technologies · 2nd year (in progress)</p>
+                            </div>
+                        </div>
+                        <div class="edu-cycle">
+                            <div class="cycle-period">2022 — 2024</div>
+                            <div class="cycle-body">
+                                <strong>Preparatory Cycle</strong>
+                                <p>Mathematics, Physics &amp; Computer Science fundamentals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edu-highlights">
+                        <span class="edu-hl"><i class="fas fa-award"></i> &lt; 200 students admitted nationwide / year</span>
+                        <span class="edu-hl"><i class="fas fa-medal"></i> Algeria's most competitive engineering institution</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bac -->
+            <div class="edu-item reveal">
+                <div class="edu-year-col">
+                    <span class="edu-yr">2022</span>
+                </div>
+                <div class="edu-dot-col">
+                    <div class="edu-dot edu-dot-sm"></div>
+                </div>
+                <div class="edu-card edu-card-bac">
+                    <div class="edu-card-top">
+                        <div class="edu-school-icon edu-school-icon-sm">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-school-info">
+                            <h3>Lycée Mohamed El Mokrani</h3>
+                            <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Bordj Bou Arréridj, Algeria</p>
+                        </div>
+                    </div>
+                    <p class="edu-degree">Baccalaureate in Experimental Sciences</p>
+                    <div class="edu-honors">
+                        <div class="honor-score">
+                            <span class="honor-num">18.86</span>
+                            <span class="honor-denom">/ 20</span>
+                        </div>
+                        <div class="honor-tags">
+                            <span class="honor-tag"><i class="fas fa-trophy"></i> Highest Honors</span>
+                            <span class="honor-tag"><i class="fas fa-users"></i> 2nd in department</span>
+                            <span class="honor-tag"><i class="fas fa-globe-africa"></i> Top 40 nationwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      SKILLS
 ═══════════════════════════════════════ -->
 <section id="skills" class="skills-section reveal-section">
     <div class="section-wrap">
-        <div class="chip">Toolbox</div>
+        <div class="chip">03 — Skills</div>
         <h2 class="s-title">Skills &amp; Technologies</h2>
         <div class="skills-deck">
 
             <div class="skill-group">
                 <h3 class="skill-group-title"><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
-                <div class="skill-pills">
-                    <div class="skill-pill reveal"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-                    <div class="skill-pill reveal"><i class="fas fa-link" style="color:#16a34a"></i><span>LangChain</span></div>
-                    <div class="skill-pill reveal"><i class="fas fa-robot" style="color:#7c3aed"></i><span>Groq / LLMs</span></div>
-                    <div class="skill-pill reveal"><i class="fas fa-database" style="color:#dc2626"></i><span>ChromaDB</span></div>
-                    <div class="skill-pill reveal"><i class="fas fa-search" style="color:#2563eb"></i><span>pgvector / BERT</span></div>
+                <div class="tech-grid">
+                    <div class="tech-box reveal"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-link" style="color:#16a34a"></i><span>LangChain</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-robot" style="color:#7c3aed"></i><span>Groq / LLMs</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-database" style="color:#dc2626"></i><span>ChromaDB</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-search" style="color:#2563eb"></i><span>BERT</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-project-diagram" style="color:#0891b2"></i><span>pgvector</span></div>
                 </div>
             </div>
 
             <div class="skill-group">
                 <h3 class="skill-group-title"><i class="fas fa-globe"></i> Web Development</h3>
-                <div class="skill-pills">
-                    <div class="skill-pill reveal"><i class="devicon-django-plain colored"></i><span>Django</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-flask-original" style="color:#374151"></i><span>Flask</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-nextjs-original"></i><span>Next.js</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                <div class="tech-grid">
+                    <div class="tech-box reveal"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+                    <div class="tech-box reveal"><i class="devicon-flask-original" style="color:#374151"></i><span>Flask</span></div>
+                    <div class="tech-box reveal"><i class="devicon-nextjs-original"></i><span>Next.js</span></div>
+                    <div class="tech-box reveal"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+                    <div class="tech-box reveal"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+                    <div class="tech-box reveal"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
                 </div>
             </div>
 
-            <div class="skill-group">
-                <h3 class="skill-group-title"><i class="fas fa-mobile-alt"></i> Mobile</h3>
-                <div class="skill-pills">
-                    <div class="skill-pill reveal"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+            <div class="skill-row-wrap">
+                <div class="skill-group skill-group-sm">
+                    <h3 class="skill-group-title"><i class="fas fa-mobile-alt"></i> Mobile</h3>
+                    <div class="tech-grid">
+                        <div class="tech-box reveal"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+                        <div class="tech-box reveal"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-group">
-                <h3 class="skill-group-title"><i class="fas fa-server"></i> Databases &amp; Tools</h3>
-                <div class="skill-pills">
-                    <div class="skill-pill reveal"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-                    <div class="skill-pill reveal"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-                    <div class="skill-pill reveal"><i class="fas fa-cogs" style="color:#3b82f6"></i><span>Odoo ERP</span></div>
+                <div class="skill-group skill-group-sm">
+                    <h3 class="skill-group-title"><i class="fas fa-server"></i> Databases &amp; Tools</h3>
+                    <div class="tech-grid">
+                        <div class="tech-box reveal"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                        <div class="tech-box reveal"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                        <div class="tech-box reveal"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                        <div class="tech-box reveal"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                        <div class="tech-box reveal"><i class="fas fa-cogs" style="color:#3b82f6"></i><span>Odoo ERP</span></div>
+                    </div>
                 </div>
             </div>
 
@@ -174,7 +280,7 @@
 ═══════════════════════════════════════ -->
 <section id="projects" class="projects-section alt-bg reveal-section">
     <div class="section-wrap">
-        <div class="chip">Work</div>
+        <div class="chip">04 — Work</div>
         <h2 class="s-title">Featured Projects</h2>
 
         <!-- FEATURED: DermaAssist -->
@@ -368,7 +474,7 @@
 ═══════════════════════════════════════ -->
 <section id="contact" class="contact-section reveal-section">
     <div class="section-wrap">
-        <div class="chip">Let's Connect</div>
+        <div class="chip">05 — Contact</div>
         <h2 class="s-title">Get In Touch</h2>
         <div class="contact-grid">
             <div class="contact-info reveal">
