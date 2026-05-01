@@ -67,6 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ══════════════════════════════════════
+       SECTION STICKY TOPS
+       Short sections (≤ 100vh): top:0 — freeze when fully in view.
+       Tall sections (> 100vh):  top = vh - height — scroll through all
+       content first, freeze only when section bottom hits viewport bottom.
+    ══════════════════════════════════════ */
+    function setSectionTops() {
+        const vh = window.innerHeight;
+        document.querySelectorAll('main > section').forEach(section => {
+            const h = section.offsetHeight;
+            section.style.top = h > vh ? `${vh - h}px` : '0px';
+        });
+    }
+    setSectionTops();
+    window.addEventListener('resize', setSectionTops, { passive: true });
+
+    /* ══════════════════════════════════════
        SCROLL PROGRESS BAR
     ══════════════════════════════════════ */
     const progressBar = document.getElementById('scrollProgress');

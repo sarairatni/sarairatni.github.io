@@ -1,559 +1,857 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sara Iratni | Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="scrollProgress"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-<div id="scrollProgress"></div>
-<div class="cursor-dot"  id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- NAVBAR — floating pill -->
-<header class="navbar" id="navbar">
-    <div class="nav-pill" id="navPill">
+    <!-- NAVBAR — floating pill -->
+    <header class="navbar" id="navbar">
+      <div class="nav-pill" id="navPill">
         <a href="#" class="logo-pill">SI<span>.</span></a>
         <div class="nav-items-wrap" id="navItemsWrap">
-            <div class="nav-blob" id="navBlob"></div>
-            <a href="#about"     class="nav-item" data-sec="about">    <i class="fas fa-user"></i>          <span>About</span></a>
-            <a href="#education" class="nav-item" data-sec="education"><i class="fas fa-graduation-cap"></i> <span>Education</span></a>
-            <a href="#skills"    class="nav-item" data-sec="skills">   <i class="fas fa-code"></i>           <span>Skills</span></a>
-            <a href="#projects"  class="nav-item" data-sec="projects"> <i class="fas fa-folder-open"></i>   <span>Projects</span></a>
-            <a href="#contact"   class="nav-item" data-sec="contact">  <i class="fas fa-envelope"></i>      <span>Contact</span></a>
+          <div class="nav-blob" id="navBlob"></div>
+          <a href="#about" class="nav-item" data-sec="about">
+            <i class="fas fa-user"></i> <span>About</span></a
+          >
+          <a href="#education" class="nav-item" data-sec="education"
+            ><i class="fas fa-graduation-cap"></i> <span>Education</span></a
+          >
+          <a href="#skills" class="nav-item" data-sec="skills">
+            <i class="fas fa-code"></i> <span>Skills</span></a
+          >
+          <a href="#projects" class="nav-item" data-sec="projects">
+            <i class="fas fa-folder-open"></i> <span>Projects</span></a
+          >
+          <a href="#contact" class="nav-item" data-sec="contact">
+            <i class="fas fa-envelope"></i> <span>Contact</span></a
+          >
         </div>
         <a href="mailto:ms_iratni@esi.dz" class="nav-hire">Hire Me</a>
         <!-- mobile toggle -->
         <button class="nav-burger" id="navBurger" aria-label="Menu">
-            <span></span><span></span>
+          <span></span><span></span>
         </button>
-    </div>
-    <!-- mobile dropdown -->
-    <div class="nav-mobile" id="navMobile">
-        <a href="#about"     data-sec="about">About</a>
+      </div>
+      <!-- mobile dropdown -->
+      <div class="nav-mobile" id="navMobile">
+        <a href="#about" data-sec="about">About</a>
         <a href="#education" data-sec="education">Education</a>
-        <a href="#skills"    data-sec="skills">Skills</a>
-        <a href="#projects"  data-sec="projects">Projects</a>
-        <a href="#contact"   data-sec="contact">Contact</a>
-    </div>
-</header>
+        <a href="#skills" data-sec="skills">Skills</a>
+        <a href="#projects" data-sec="projects">Projects</a>
+        <a href="#contact" data-sec="contact">Contact</a>
+      </div>
+    </header>
 
-<main>
-<!-- ═══════════════════════════════════════
+    <main>
+      <!-- ═══════════════════════════════════════
      HERO
 ═══════════════════════════════════════ -->
-<section id="hero" class="hero">
-    <div class="hero-inner">
-        <div class="hero-left">
+      <section id="hero" class="hero">
+        <div class="hero-inner">
+          <div class="hero-left">
             <div class="avail-chip">
-                <span class="pulse-dot"></span>
-                Open to opportunities
+              <span class="pulse-dot"></span>
+              Open to opportunities
             </div>
             <p class="hero-sub">Hi, I'm</p>
             <h1 class="hero-name">Sara Iratni</h1>
             <div class="hero-role-wrap">
-                <span id="typed-role"></span><span class="blink-caret">|</span>
+              <span id="typed-role"></span><span class="blink-caret">|</span>
             </div>
-            <p class="hero-bio">Building intelligent full-stack apps, AI-powered backends, and seamless mobile experiences — one commit at a time.</p>
+            <p class="hero-bio">
+              Building intelligent full-stack apps, AI-powered backends, and
+              seamless mobile experiences — one commit at a time.
+            </p>
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-solid">View Projects</a>
-                <a href="#contact" class="btn btn-ghost">Contact Me</a>
+              <a href="#projects" class="btn btn-solid">View Projects</a>
+              <a href="#contact" class="btn btn-ghost">Contact Me</a>
             </div>
             <div class="hero-social">
-                <a href="https://github.com/sarairatni" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sara-iratni" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:ms_iratni@esi.dz" title="Email"><i class="fas fa-envelope"></i></a>
+              <a
+                href="https://github.com/sarairatni"
+                target="_blank"
+                rel="noopener"
+                title="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/sara-iratni"
+                target="_blank"
+                rel="noopener"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="mailto:ms_iratni@esi.dz" title="Email"
+                ><i class="fas fa-envelope"></i
+              ></a>
             </div>
-        </div>
-        <div class="hero-right">
+          </div>
+          <div class="hero-right">
             <div class="photo-orbit">
-                <div class="orbit-ring orbit-1"></div>
-                <div class="orbit-ring orbit-2"></div>
-                <div class="photo-blob">
-                    <img src="sara_s_pic.jpg" alt="Sara Iratni" class="profile-img">
-                </div>
-                <div class="orbit-tag tag-1"><i class="devicon-python-plain colored"></i> Python</div>
-                <div class="orbit-tag tag-2"><i class="devicon-flutter-plain colored"></i> Flutter</div>
-                <div class="orbit-tag tag-3"><i class="fas fa-brain"></i> AI / ML</div>
-                <div class="orbit-tag tag-4"><i class="devicon-django-plain colored"></i> Django</div>
+              <div class="orbit-ring orbit-1"></div>
+              <div class="orbit-ring orbit-2"></div>
+              <div class="photo-blob">
+                <img
+                  src="sara_s_pic.jpg"
+                  alt="Sara Iratni"
+                  class="profile-img"
+                />
+              </div>
+              <div class="orbit-tag tag-1">
+                <i class="devicon-python-plain colored"></i> Python
+              </div>
+              <div class="orbit-tag tag-2">
+                <i class="devicon-flutter-plain colored"></i> Flutter
+              </div>
+              <div class="orbit-tag tag-3">
+                <i class="fas fa-brain"></i> AI / ML
+              </div>
+              <div class="orbit-tag tag-4">
+                <i class="devicon-django-plain colored"></i> Django
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- Ticker strip — full-width tech band at hero bottom -->
-    <div class="ticker-strip" aria-hidden="true">
-        <div class="ticker-track">
-            <span class="ticker-item"><i class="devicon-python-plain colored"></i>Python</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-flutter-plain colored"></i>Flutter</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-django-plain colored"></i>Django</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="fas fa-link" style="color:#16a34a"></i>LangChain</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-typescript-plain colored"></i>TypeScript</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-nextjs-original"></i>Next.js</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-docker-plain colored"></i>Docker</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="fas fa-robot" style="color:#b45309"></i>LLMs</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-dart-plain colored"></i>Dart</span><span class="ticker-sep">◆</span>
+        <!-- Ticker strip — full-width tech band at hero bottom -->
+        <div class="ticker-strip" aria-hidden="true">
+          <div class="ticker-track">
+            <span class="ticker-item"
+              ><i class="devicon-python-plain colored"></i>Python</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-flutter-plain colored"></i>Flutter</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-django-plain colored"></i>Django</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="fas fa-link" style="color: #16a34a"></i>LangChain</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-typescript-plain colored"></i>TypeScript</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-nextjs-original"></i>Next.js</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-docker-plain colored"></i>Docker</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="fas fa-robot" style="color: #b45309"></i>LLMs</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-dart-plain colored"></i>Dart</span
+            ><span class="ticker-sep">◆</span>
             <!-- Duplicate for seamless loop -->
-            <span class="ticker-item"><i class="devicon-python-plain colored"></i>Python</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-flutter-plain colored"></i>Flutter</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-django-plain colored"></i>Django</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="fas fa-link" style="color:#16a34a"></i>LangChain</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-typescript-plain colored"></i>TypeScript</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-nextjs-original"></i>Next.js</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-docker-plain colored"></i>Docker</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="fas fa-robot" style="color:#b45309"></i>LLMs</span><span class="ticker-sep">◆</span>
-            <span class="ticker-item"><i class="devicon-dart-plain colored"></i>Dart</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-python-plain colored"></i>Python</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-flutter-plain colored"></i>Flutter</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-django-plain colored"></i>Django</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="fas fa-link" style="color: #16a34a"></i>LangChain</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-typescript-plain colored"></i>TypeScript</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-nextjs-original"></i>Next.js</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-docker-plain colored"></i>Docker</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="fas fa-robot" style="color: #b45309"></i>LLMs</span
+            ><span class="ticker-sep">◆</span>
+            <span class="ticker-item"
+              ><i class="devicon-dart-plain colored"></i>Dart</span
+            ><span class="ticker-sep">◆</span>
+          </div>
         </div>
-    </div>
 
-    <div class="hero-scroll" aria-hidden="true">
-        <div class="mouse"><div class="mouse-wheel"></div></div>
-        <span>Scroll</span>
-    </div>
-</section>
+        <div class="hero-scroll" aria-hidden="true">
+          <div class="mouse"><div class="mouse-wheel"></div></div>
+          <span>Scroll</span>
+        </div>
+      </section>
 
-<!-- ═══════════════════════════════════════
+      <!-- ═══════════════════════════════════════
      ABOUT
 ═══════════════════════════════════════ -->
-<section id="about" class="about-section dark">
-    <div class="section-wrap">
-        <div class="chip">01 — About</div>
-        <h2 class="s-title">About Me</h2>
-        <div class="about-grid">
+      <section id="about" class="about-section dark">
+        <div class="section-wrap">
+          <div class="chip">01 — About</div>
+          <h2 class="s-title">About Me</h2>
+          <div class="about-grid">
             <div class="about-copy">
-                <p>I'm <strong>Sara Iratni</strong>, a software engineering student at ESI Algiers 🇩🇿. I build elegant solutions that bridge intelligent backends and beautiful frontends — from LLM-powered product agents to multi-screen Flutter apps.</p>
-                <p>My current obsession is the intersection of <em>AI</em> and <em>real-world products</em>: vector databases, LangChain pipelines, and AI-driven mobile experiences that actually matter to users.</p>
-                <p>When I'm not coding, I'm exploring new frameworks, contributing to open source, or dreaming up the next project idea.</p>
-                <a href="#contact" class="btn btn-solid" style="margin-top:1.5rem">Get In Touch</a>
+              <p>
+                I'm <strong>Sara Iratni</strong>, a software engineering student
+                at ESI Algiers 🇩🇿. I build elegant solutions that bridge
+                intelligent backends and beautiful frontends — from LLM-powered
+                product agents to multi-screen Flutter apps.
+              </p>
+              <p>
+                My current obsession is the intersection of <em>AI</em> and
+                <em>real-world products</em>: vector databases, LangChain
+                pipelines, and AI-driven mobile experiences that actually matter
+                to users.
+              </p>
+              <p>
+                When I'm not coding, I'm exploring new frameworks, contributing
+                to open source, or dreaming up the next project idea.
+              </p>
+              <a
+                href="#contact"
+                class="btn btn-solid"
+                style="margin-top: 1.5rem"
+                >Get In Touch</a
+              >
             </div>
             <div class="about-stats-grid">
-                <div class="stat-box reveal">
-                    <span class="stat-n" data-target="7" data-suffix="+">0</span>
-                    <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-box reveal">
-                    <span class="stat-n" data-target="12" data-suffix="+">0</span>
-                    <span class="stat-label">Technologies</span>
-                </div>
-                <div class="stat-box reveal">
-                    <span class="stat-n" data-target="3" data-suffix="+">0</span>
-                    <span class="stat-label">Years Coding</span>
-                </div>
-                <div class="stat-box reveal">
-                    <span class="stat-n" data-target="100" data-suffix="%">0</span>
-                    <span class="stat-label">Dedicated</span>
-                </div>
+              <div class="stat-box reveal">
+                <span class="stat-n" data-target="7" data-suffix="+">0</span>
+                <span class="stat-label">Open source projects</span>
+              </div>
+              <div class="stat-box reveal">
+                <span class="stat-n" data-target="12" data-suffix="+">0</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+              <div class="stat-box reveal">
+                <span class="stat-n" data-target="3" data-suffix="+">0</span>
+                <span class="stat-label">Years Coding</span>
+              </div>
+              <div class="stat-box reveal">
+                <span class="stat-n" data-target="100" data-suffix="%">0</span>
+                <span class="stat-label">Dedicated</span>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<!-- ═══════════════════════════════════════
+      <!-- ═══════════════════════════════════════
      EDUCATION
 ═══════════════════════════════════════ -->
-<section id="education" class="edu-section">
-    <div class="section-wrap">
-        <div class="chip">02 — Education</div>
-        <h2 class="s-title">Academic Background</h2>
-        <div class="edu-timeline">
-
+      <section id="education" class="edu-section">
+        <div class="section-wrap">
+          <div class="chip">02 — Education</div>
+          <h2 class="s-title">Academic Background</h2>
+          <div class="edu-timeline">
             <!-- ESI -->
             <div class="edu-item reveal">
-                <div class="edu-year-col">
-                    <span class="edu-yr">2022</span>
-                    <span class="edu-yr-sep">↓</span>
-                    <span class="edu-yr">2027</span>
+              <div class="edu-year-col">
+                <span class="edu-yr">2022</span>
+                <span class="edu-yr-sep">↓</span>
+                <span class="edu-yr">2027</span>
+              </div>
+              <div class="edu-dot-col">
+                <div class="edu-dot"></div>
+                <div class="edu-vline"></div>
+              </div>
+              <div class="edu-card">
+                <div class="edu-card-top">
+                  <div class="edu-school-icon">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <div class="edu-school-info">
+                    <h3>
+                      École Nationale Supérieure d'Informatique
+                      <span class="edu-abbr">(ESI)</span>
+                    </h3>
+                    <p class="edu-location">
+                      <i class="fas fa-map-marker-alt"></i> Algiers, Algeria
+                    </p>
+                  </div>
+                  <div class="edu-status-badge">In progress</div>
                 </div>
-                <div class="edu-dot-col">
-                    <div class="edu-dot"></div>
-                    <div class="edu-vline"></div>
+                <p class="edu-degree">
+                  State Engineer Degree in Computer Science
+                  <span class="edu-parens"
+                    >(Bac+5 — equiv. Master of Engineering)</span
+                  >
+                </p>
+                <div class="edu-cycles">
+                  <div class="edu-cycle cycle-active">
+                    <div class="cycle-period">2024 — 2027</div>
+                    <div class="cycle-body">
+                      <strong>Superior Cycle</strong>
+                      <p>
+                        Specialization: Information Systems &amp; Technologies ·
+                        2nd year (in progress)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="edu-cycle">
+                    <div class="cycle-period">2022 — 2024</div>
+                    <div class="cycle-body">
+                      <strong>Preparatory Cycle</strong>
+                      <p>
+                        Mathematics, Physics &amp; Computer Science fundamentals
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="edu-card">
-                    <div class="edu-card-top">
-                        <div class="edu-school-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="edu-school-info">
-                            <h3>École Nationale Supérieure d'Informatique <span class="edu-abbr">(ESI)</span></h3>
-                            <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</p>
-                        </div>
-                        <div class="edu-status-badge">In progress</div>
-                    </div>
-                    <p class="edu-degree">State Engineer Degree in Computer Science <span class="edu-parens">(Bac+5 — equiv. Master of Engineering)</span></p>
-                    <div class="edu-cycles">
-                        <div class="edu-cycle cycle-active">
-                            <div class="cycle-period">2024 — 2027</div>
-                            <div class="cycle-body">
-                                <strong>Superior Cycle</strong>
-                                <p>Specialization: Information Systems &amp; Technologies · 2nd year (in progress)</p>
-                            </div>
-                        </div>
-                        <div class="edu-cycle">
-                            <div class="cycle-period">2022 — 2024</div>
-                            <div class="cycle-body">
-                                <strong>Preparatory Cycle</strong>
-                                <p>Mathematics, Physics &amp; Computer Science fundamentals</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edu-highlights">
-                        <span class="edu-hl"><i class="fas fa-award"></i> &lt; 200 students admitted nationwide / year</span>
-                        <span class="edu-hl"><i class="fas fa-medal"></i> Algeria's most competitive engineering institution</span>
-                    </div>
+                <div class="edu-highlights">
+                  <span class="edu-hl"
+                    ><i class="fas fa-award"></i> &lt; 200 students admitted
+                    nationwide / year</span
+                  >
+                  <span class="edu-hl"
+                    ><i class="fas fa-medal"></i> Algeria's most competitive
+                    engineering institution</span
+                  >
                 </div>
+              </div>
             </div>
 
             <!-- Bac -->
             <div class="edu-item reveal">
-                <div class="edu-year-col">
-                    <span class="edu-yr">2022</span>
+              <div class="edu-year-col">
+                <span class="edu-yr">2022</span>
+              </div>
+              <div class="edu-dot-col">
+                <div class="edu-dot edu-dot-sm"></div>
+              </div>
+              <div class="edu-card edu-card-bac">
+                <div class="edu-card-top">
+                  <div class="edu-school-icon edu-school-icon-sm">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="edu-school-info">
+                    <h3>Lycée Mohamed El Mokrani</h3>
+                    <p class="edu-location">
+                      <i class="fas fa-map-marker-alt"></i> Bordj Bou Arréridj,
+                      Algeria
+                    </p>
+                  </div>
                 </div>
-                <div class="edu-dot-col">
-                    <div class="edu-dot edu-dot-sm"></div>
+                <p class="edu-degree">Baccalaureate in Experimental Sciences</p>
+                <div class="edu-honors">
+                  <div class="honor-score">
+                    <span class="honor-num">18.86</span>
+                    <span class="honor-denom">/ 20</span>
+                  </div>
+                  <div class="honor-tags">
+                    <span class="honor-tag"
+                      ><i class="fas fa-trophy"></i> Highest Honors</span
+                    >
+                    <span class="honor-tag"
+                      ><i class="fas fa-users"></i> 2nd in department</span
+                    >
+                    <span class="honor-tag"
+                      ><i class="fas fa-globe-africa"></i> Top 40
+                      nationwide</span
+                    >
+                  </div>
                 </div>
-                <div class="edu-card edu-card-bac">
-                    <div class="edu-card-top">
-                        <div class="edu-school-icon edu-school-icon-sm">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="edu-school-info">
-                            <h3>Lycée Mohamed El Mokrani</h3>
-                            <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Bordj Bou Arréridj, Algeria</p>
-                        </div>
-                    </div>
-                    <p class="edu-degree">Baccalaureate in Experimental Sciences</p>
-                    <div class="edu-honors">
-                        <div class="honor-score">
-                            <span class="honor-num">18.86</span>
-                            <span class="honor-denom">/ 20</span>
-                        </div>
-                        <div class="honor-tags">
-                            <span class="honor-tag"><i class="fas fa-trophy"></i> Highest Honors</span>
-                            <span class="honor-tag"><i class="fas fa-users"></i> 2nd in department</span>
-                            <span class="honor-tag"><i class="fas fa-globe-africa"></i> Top 40 nationwide</span>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<!-- ═══════════════════════════════════════
+      <!-- ═══════════════════════════════════════
      SKILLS
 ═══════════════════════════════════════ -->
-<section id="skills" class="skills-section dark">
-    <div class="section-wrap">
-        <div class="chip">03 — Skills</div>
-        <h2 class="s-title">Skills &amp; Technologies</h2>
-        <div class="skills-deck">
-
+      <section id="skills" class="skills-section dark">
+        <div class="section-wrap">
+          <div class="chip">03 — Skills</div>
+          <h2 class="s-title">Skills &amp; Technologies</h2>
+          <div class="skills-deck">
             <div class="skill-group">
-                <h3 class="skill-group-title"><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
-                <div class="tech-grid">
-                    <div class="tech-box reveal"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-link" style="color:#16a34a"></i><span>LangChain</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-robot" style="color:#b45309"></i><span>Groq / LLMs</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-database" style="color:#dc2626"></i><span>ChromaDB</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-search" style="color:#2563eb"></i><span>BERT</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-project-diagram" style="color:#0891b2"></i><span>pgvector</span></div>
+              <h3 class="skill-group-title">
+                <i class="fas fa-brain"></i> AI &amp; Machine Learning
+              </h3>
+              <div class="tech-grid">
+                <div class="tech-box reveal">
+                  <i class="devicon-python-plain colored"></i
+                  ><span>Python</span>
                 </div>
+                <div class="tech-box reveal">
+                  <i class="fas fa-link" style="color: #16a34a"></i
+                  ><span>LangChain</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="fas fa-robot" style="color: #b45309"></i
+                  ><span>Groq / LLMs</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="fas fa-database" style="color: #dc2626"></i
+                  ><span>ChromaDB</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="fas fa-search" style="color: #2563eb"></i
+                  ><span>BERT</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="fas fa-project-diagram" style="color: #0891b2"></i
+                  ><span>pgvector</span>
+                </div>
+              </div>
             </div>
 
             <div class="skill-group">
-                <h3 class="skill-group-title"><i class="fas fa-globe"></i> Web Development</h3>
-                <div class="tech-grid">
-                    <div class="tech-box reveal"><i class="devicon-django-plain colored"></i><span>Django</span></div>
-                    <div class="tech-box reveal"><i class="devicon-flask-original" style="color:#374151"></i><span>Flask</span></div>
-                    <div class="tech-box reveal"><i class="devicon-nextjs-original"></i><span>Next.js</span></div>
-                    <div class="tech-box reveal"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
-                    <div class="tech-box reveal"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-                    <div class="tech-box reveal"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+              <h3 class="skill-group-title">
+                <i class="fas fa-globe"></i> Web Development
+              </h3>
+              <div class="tech-grid">
+                <div class="tech-box reveal">
+                  <i class="devicon-django-plain colored"></i
+                  ><span>Django</span>
                 </div>
+                <div class="tech-box reveal">
+                  <i class="devicon-flask-original" style="color: #374151"></i
+                  ><span>Flask</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="devicon-nextjs-original"></i><span>Next.js</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="devicon-angularjs-plain colored"></i
+                  ><span>Angular</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="devicon-typescript-plain colored"></i
+                  ><span>TypeScript</span>
+                </div>
+                <div class="tech-box reveal">
+                  <i class="devicon-nodejs-plain colored"></i
+                  ><span>Node.js</span>
+                </div>
+              </div>
             </div>
 
             <div class="skill-row-wrap">
-                <div class="skill-group skill-group-sm">
-                    <h3 class="skill-group-title"><i class="fas fa-mobile-alt"></i> Mobile</h3>
-                    <div class="tech-grid">
-                        <div class="tech-box reveal"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
-                        <div class="tech-box reveal"><i class="devicon-dart-plain colored"></i><span>Dart</span></div>
-                    </div>
+              <div class="skill-group skill-group-sm">
+                <h3 class="skill-group-title">
+                  <i class="fas fa-mobile-alt"></i> Mobile
+                </h3>
+                <div class="tech-grid">
+                  <div class="tech-box reveal">
+                    <i class="devicon-flutter-plain colored"></i
+                    ><span>Flutter</span>
+                  </div>
+                  <div class="tech-box reveal">
+                    <i class="devicon-dart-plain colored"></i><span>Dart</span>
+                  </div>
                 </div>
+              </div>
 
-                <div class="skill-group skill-group-sm">
-                    <h3 class="skill-group-title"><i class="fas fa-server"></i> Databases &amp; Tools</h3>
-                    <div class="tech-grid">
-                        <div class="tech-box reveal"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-                        <div class="tech-box reveal"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-                        <div class="tech-box reveal"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-                        <div class="tech-box reveal"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-                        <div class="tech-box reveal"><i class="fas fa-cogs" style="color:#3b82f6"></i><span>Odoo ERP</span></div>
-                    </div>
+              <div class="skill-group skill-group-sm">
+                <h3 class="skill-group-title">
+                  <i class="fas fa-server"></i> Databases &amp; Tools
+                </h3>
+                <div class="tech-grid">
+                  <div class="tech-box reveal">
+                    <i class="devicon-postgresql-plain colored"></i
+                    ><span>PostgreSQL</span>
+                  </div>
+                  <div class="tech-box reveal">
+                    <i class="devicon-mysql-plain colored"></i
+                    ><span>MySQL</span>
+                  </div>
+                  <div class="tech-box reveal">
+                    <i class="devicon-git-plain colored"></i><span>Git</span>
+                  </div>
+                  <div class="tech-box reveal">
+                    <i class="devicon-docker-plain colored"></i
+                    ><span>Docker</span>
+                  </div>
+                  <div class="tech-box reveal">
+                    <i class="fas fa-cogs" style="color: #3b82f6"></i
+                    ><span>Odoo ERP</span>
+                  </div>
                 </div>
+              </div>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<!-- ═══════════════════════════════════════
+      <!-- ═══════════════════════════════════════
      PROJECTS
 ═══════════════════════════════════════ -->
-<section id="projects" class="projects-section alt-bg">
-    <div class="section-wrap">
-        <div class="chip">04 — Work</div>
-        <h2 class="s-title">Featured Projects</h2>
+      <section id="projects" class="projects-section alt-bg">
+        <div class="section-wrap">
+          <div class="chip">04 — Work</div>
+          <h2 class="s-title">Featured Projects</h2>
 
-        <!-- FEATURED: DermaAssist -->
-        <div class="project-featured reveal">
-            <div class="proj-featured-visual derma-visual">
-                <div class="phone-mockup">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen">
-                        <div class="app-header-bar">
-                            <span class="app-title-text">DermaAssist</span>
-                            <i class="fas fa-bell" style="color:rgba(255,255,255,0.5);font-size:0.7rem"></i>
-                        </div>
-                        <div class="scan-area">
-                            <div class="scan-ring"></div>
-                            <div class="scan-pulse"></div>
-                            <i class="fas fa-microscope scan-icon"></i>
-                        </div>
-                        <div class="result-row">
-                            <div class="result-label-text">Analyzing skin condition…</div>
-                            <div class="result-track"><div class="result-fill"></div></div>
-                        </div>
-                        <div class="diagnosis-chips">
-                            <span class="d-chip safe">Low Risk</span>
-                            <span class="d-chip warn">Consult</span>
-                        </div>
-                    </div>
-                </div>
+          <!-- FEATURED: Skin+ -->
+          <div class="project-featured reveal">
+            <div class="proj-featured-visual">
+              <img src="assets/images/skinplus.png" alt="Skin+" />
             </div>
             <div class="proj-featured-info">
-                <span class="project-badge">⭐ Latest Project</span>
-                <h3>DermaAssist</h3>
-                <p>An AI-powered mobile application for skin disease detection and dermatology assistance. Uses deep learning image classification to analyze skin conditions, provide risk assessments, and recommend whether a specialist consultation is needed.</p>
-                <div class="tech-tags">
-                    <span>Flutter</span><span>Dart</span><span>Deep Learning</span><span>Python</span><span>Mobile AI</span>
-                </div>
-                <a href="https://github.com/sarairatni/DermaAssist" target="_blank" rel="noopener" class="btn btn-solid btn-sm">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
+              <span class="project-badge">Latest Project</span>
+              <h3>Skin+</h3>
+              <p>
+                An AI-powered mobile application for skin disease detection and
+                dermatology assistance. Uses deep learning image classification
+                to analyze skin conditions, provide risk assessments, and
+                recommend whether a specialist consultation is needed.
+              </p>
+              <div class="tech-tags">
+                <span>React Native</span><span>Deep Learning</span
+                ><span>Python</span><span>Mobile AI</span>
+              </div>
+              <a
+                href="https://github.com/sarairatni/DermaAssist"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-solid btn-sm"
+              >
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
             </div>
-        </div>
+          </div>
 
-        <!-- PROJECTS GRID -->
-        <div class="projects-grid">
-
+          <!-- PROJECTS GRID -->
+          <div class="projects-grid">
             <!-- Django LangChain -->
             <div class="proj-card reveal">
-                <div class="proj-visual chat-visual">
-                    <div class="browser-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-                    <div class="chat-ui">
-                        <div class="chat-bubble bot">Find best B2B laptops under 50k DZD</div>
-                        <div class="chat-bubble user">Here are 3 top picks for you…</div>
-                        <div class="chat-bubble bot small">Powered by Llama 3 ✦</div>
-                    </div>
+              <div class="proj-visual chat-visual">
+                <div class="browser-bar">
+                  <div class="dot r"></div>
+                  <div class="dot y"></div>
+                  <div class="dot g"></div>
                 </div>
-                <div class="proj-info">
-                    <h3>Django LangChain Agent</h3>
-                    <p>Full-stack Django app powered by LangChain &amp; Groq's Llama 3 for real-time intelligent B2B product recommendations.</p>
-                    <div class="tech-tags"><span>Python</span><span>Django</span><span>LangChain</span><span>Groq</span></div>
-                    <a href="https://github.com/sarairatni/django-langchain-product-agent" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
+                <div class="chat-ui">
+                  <div class="chat-bubble bot">
+                    Find best B2B laptops under 50k DZD
+                  </div>
+                  <div class="chat-bubble user">
+                    Here are 3 top picks for you…
+                  </div>
+                  <div class="chat-bubble bot small">Powered by Llama 3 ✦</div>
                 </div>
+              </div>
+              <div class="proj-info">
+                <h3>Django LangChain Agent</h3>
+                <p>
+                  Full-stack Django app powered by LangChain &amp; Groq's Llama
+                  3 for real-time intelligent B2B product recommendations.
+                </p>
+                <div class="tech-tags">
+                  <span>Python</span><span>Django</span><span>LangChain</span
+                  ><span>Groq</span>
+                </div>
+                <a
+                  href="https://github.com/sarairatni/django-langchain-product-agent"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- eCare -->
             <div class="proj-card reveal">
-                <div class="proj-visual ecare-visual">
-                    <div class="browser-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-                    <div class="dashboard-ui">
-                        <div class="dash-sidebar">
-                            <div class="dash-item active"></div>
-                            <div class="dash-item"></div>
-                            <div class="dash-item"></div>
-                            <div class="dash-item"></div>
-                        </div>
-                        <div class="dash-main">
-                            <div class="dash-cards-row">
-                                <div class="dash-kpi"></div>
-                                <div class="dash-kpi"></div>
-                            </div>
-                            <div class="dash-chart">
-                                <div class="bar" style="height:45%"></div>
-                                <div class="bar" style="height:70%"></div>
-                                <div class="bar" style="height:55%"></div>
-                                <div class="bar" style="height:90%"></div>
-                                <div class="bar" style="height:65%"></div>
-                                <div class="bar" style="height:80%"></div>
-                            </div>
-                        </div>
-                    </div>
+              <div class="proj-visual">
+                <img src="assets/images/ecare.svg" alt="eCare Dashboard" />
+              </div>
+              <div class="proj-info">
+                <h3>eCare Dashboard</h3>
+                <p>
+                  Full-stack hospital management system covering consultations,
+                  prescriptions, lab results and electronic patient records.
+                </p>
+                <div class="tech-tags">
+                  <span>Angular</span><span>Django</span><span>MySQL</span>
                 </div>
-                <div class="proj-info">
-                    <h3>eCare Dashboard</h3>
-                    <p>Full-stack hospital management system covering consultations, prescriptions, lab results and electronic patient records.</p>
-                    <div class="tech-tags"><span>Angular</span><span>Django</span><span>MySQL</span></div>
-                    <a href="https://github.com/sarairatni/eCare" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <a
+                  href="https://github.com/sarairatni/eCare"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- Selekny -->
             <div class="proj-card reveal">
-                <div class="proj-visual selekny-visual">
-                    <div class="phone-mini-wrap">
-                        <div class="phone-mini">
-                            <div class="map-bg">
-                                <div class="map-grid"></div>
-                                <div class="map-radius"></div>
-                                <div class="map-dot"></div>
-                                <div class="map-pin pin-1"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="map-pin pin-2"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="map-pin pin-3"><i class="fas fa-wrench"></i></div>
-                            </div>
-                        </div>
-                    </div>
+              <div class="proj-visual">
+                <img src="assets/images/seleknyapp.png" alt="Selekny App" />
+              </div>
+              <div class="proj-info">
+                <h3>Selekny App</h3>
+                <p>
+                  Flutter mobile app to simplify home service reservations,
+                  connecting clients with nearby providers via Google Maps.
+                </p>
+                <div class="tech-tags">
+                  <span>Flutter</span><span>Dart</span><span>Google Maps</span>
                 </div>
-                <div class="proj-info">
-                    <h3>Selekny App</h3>
-                    <p>Flutter mobile app to simplify home service reservations, connecting clients with nearby providers via Google Maps.</p>
-                    <div class="tech-tags"><span>Flutter</span><span>Dart</span><span>Google Maps</span></div>
-                    <a href="https://github.com/sarairatni/Selekny-App" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <a
+                  href="https://github.com/sarairatni/Selekny-App"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- Semantic Search -->
             <div class="proj-card reveal">
-                <div class="proj-visual search-visual">
-                    <div class="browser-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-                    <div class="search-ui">
-                        <div class="search-bar-mini"><i class="fas fa-search"></i><span class="search-typed">amazing waterproof speaker…</span></div>
-                        <div class="search-results">
-                            <div class="result-item"><div class="ri-icon"></div><div class="ri-lines"><div></div><div></div></div></div>
-                            <div class="result-item"><div class="ri-icon"></div><div class="ri-lines"><div></div><div></div></div></div>
-                            <div class="result-item"><div class="ri-icon"></div><div class="ri-lines"><div></div><div></div></div></div>
-                        </div>
+              <div class="proj-visual search-visual">
+                <div class="browser-bar">
+                  <div class="dot r"></div>
+                  <div class="dot y"></div>
+                  <div class="dot g"></div>
+                </div>
+                <div class="search-ui">
+                  <div class="search-bar-mini">
+                    <i class="fas fa-search"></i
+                    ><span class="search-typed"
+                      >amazing waterproof speaker…</span
+                    >
+                  </div>
+                  <div class="search-results">
+                    <div class="result-item">
+                      <div class="ri-icon"></div>
+                      <div class="ri-lines">
+                        <div></div>
+                        <div></div>
+                      </div>
                     </div>
+                    <div class="result-item">
+                      <div class="ri-icon"></div>
+                      <div class="ri-lines">
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                    <div class="result-item">
+                      <div class="ri-icon"></div>
+                      <div class="ri-lines">
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="proj-info">
-                    <h3>Semantic Search Engine</h3>
-                    <p>Semantic search engine for Amazon reviews using Sentence-BERT embeddings, IVFFlat indexing, and PostgreSQL + pgvector.</p>
-                    <div class="tech-tags"><span>Python</span><span>PostgreSQL</span><span>BERT</span><span>pgvector</span></div>
-                    <a href="https://github.com/sarairatni/semantic-search-amazon-review" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="proj-info">
+                <h3>Semantic Search Engine</h3>
+                <p>
+                  Semantic search engine for Amazon reviews using Sentence-BERT
+                  embeddings, IVFFlat indexing, and PostgreSQL + pgvector.
+                </p>
+                <div class="tech-tags">
+                  <span>Python</span><span>PostgreSQL</span><span>BERT</span
+                  ><span>pgvector</span>
                 </div>
+                <a
+                  href="https://github.com/sarairatni/semantic-search-amazon-review"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- ElecZone -->
             <div class="proj-card reveal">
-                <div class="proj-visual eleczone-visual">
-                    <div class="browser-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-                    <div class="shop-ui">
-                        <div class="shop-search"><i class="fas fa-search"></i></div>
-                        <div class="product-grid-mini">
-                            <div class="product-mini"><i class="fas fa-laptop"></i><div class="pm-bar"></div></div>
-                            <div class="product-mini featured-p"><i class="fas fa-mobile-alt"></i><div class="pm-bar"></div></div>
-                            <div class="product-mini"><i class="fas fa-headphones"></i><div class="pm-bar"></div></div>
-                            <div class="product-mini"><i class="fas fa-tv"></i><div class="pm-bar"></div></div>
-                        </div>
-                    </div>
+              <div class="proj-visual">
+                <img src="assets/images/eleczone2.png" alt="ElecZone" />
+              </div>
+              <div class="proj-info">
+                <h3>ElecZone</h3>
+                <p>
+                  E-commerce app built on hexagonal architecture with Next.js,
+                  Express &amp; PostgreSQL, powered by LangChain &amp; ChromaDB
+                  for AI search.
+                </p>
+                <div class="tech-tags">
+                  <span>Next.js</span><span>Node.js</span><span>ChromaDB</span
+                  ><span>LangChain</span>
                 </div>
-                <div class="proj-info">
-                    <h3>ElecZone</h3>
-                    <p>E-commerce app built on hexagonal architecture with Next.js, Express &amp; PostgreSQL, powered by LangChain &amp; ChromaDB for AI search.</p>
-                    <div class="tech-tags"><span>Next.js</span><span>Node.js</span><span>ChromaDB</span><span>LangChain</span></div>
-                    <a href="https://github.com/sarairatni/ElecZone2" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <a
+                  href="https://github.com/sarairatni/ElecZone2"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- Odoo -->
             <div class="proj-card reveal">
-                <div class="proj-visual odoo-visual">
-                    <div class="browser-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-                    <div class="crm-ui">
-                        <div class="crm-header-row"></div>
-                        <div class="crm-row"><div class="status-dot open"></div><div class="crm-line"></div><div class="crm-tag">Open</div></div>
-                        <div class="crm-row"><div class="status-dot done"></div><div class="crm-line"></div><div class="crm-tag">Resolved</div></div>
-                        <div class="crm-row"><div class="status-dot pending"></div><div class="crm-line"></div><div class="crm-tag">Pending</div></div>
-                        <div class="crm-row"><div class="status-dot done"></div><div class="crm-line"></div><div class="crm-tag">Resolved</div></div>
-                    </div>
+              <div class="proj-visual">
+                <img src="assets/images/djezzycollab.svg" alt="DjezzyCollab" />
+              </div>
+              <div class="proj-info">
+                <h3>DjezzyCollab</h3>
+                <p>
+                  A collaborative platform built for Djezzy, enabling team
+                  coordination, task management, and internal communication
+                  across departments.
+                </p>
+                <div class="tech-tags">
+                  <span>React</span><span>Node.js</span><span>PostgreSQL</span>
                 </div>
-                <div class="proj-info">
-                    <h3>Odoo Reclamations</h3>
-                    <p>Odoo CRM module to manage client complaints, tracking commissions, refusal decisions, and automated report generation.</p>
-                    <div class="tech-tags"><span>Python</span><span>Odoo</span><span>ERP</span></div>
-                    <a href="https://github.com/sarairatni/OdooCRM_Elmiyah_Reclamations" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <a
+                  href="https://github.com/sarairatni"
+                  target="_blank"
+                  rel="noopener"
+                  class="proj-link"
+                  ><i class="fab fa-github"></i> GitHub
+                  <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<!-- ═══════════════════════════════════════
+      <!-- ═══════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════ -->
-<section id="contact" class="contact-section dark">
-    <div class="section-wrap">
-        <div class="chip">05 — Contact</div>
-        <h2 class="s-title">Get In Touch</h2>
-        <div class="contact-grid">
+      <section id="contact" class="contact-section dark">
+        <div class="section-wrap">
+          <div class="chip">05 — Contact</div>
+          <h2 class="s-title">Get In Touch</h2>
+          <div class="contact-grid">
             <div class="contact-info reveal">
-                <p>I'm currently looking for new opportunities. Whether you have a project, a question, or just want to say hi — my inbox is always open!</p>
-                <div class="contact-links">
-                    <a href="mailto:ms_iratni@esi.dz" class="contact-link">
-                        <span class="cl-icon"><i class="fas fa-envelope"></i></span>
-                        <span>ms_iratni@esi.dz</span>
-                    </a>
-                    <a href="https://github.com/sarairatni" target="_blank" rel="noopener" class="contact-link">
-                        <span class="cl-icon"><i class="fab fa-github"></i></span>
-                        <span>github.com/sarairatni</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sara-iratni" target="_blank" rel="noopener" class="contact-link">
-                        <span class="cl-icon"><i class="fab fa-linkedin-in"></i></span>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                </div>
+              <p>
+                I'm currently looking for new opportunities. Whether you have a
+                project, a question, or just want to say hi — my inbox is always
+                open!
+              </p>
+              <div class="contact-links">
+                <a href="mailto:ms_iratni@esi.dz" class="contact-link">
+                  <span class="cl-icon"><i class="fas fa-envelope"></i></span>
+                  <span>ms_iratni@esi.dz</span>
+                </a>
+                <a
+                  href="https://github.com/sarairatni"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-link"
+                >
+                  <span class="cl-icon"><i class="fab fa-github"></i></span>
+                  <span>github.com/sarairatni</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sara-iratni"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-link"
+                >
+                  <span class="cl-icon"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></span>
+                  <span>LinkedIn Profile</span>
+                </a>
+              </div>
             </div>
-            <form action="https://formspree.io/f/xkopjgdn" method="POST" class="contact-form reveal">
-                <div class="form-field">
-                    <input type="text" name="name" required placeholder="Your Name">
-                </div>
-                <div class="form-field">
-                    <input type="email" name="_replyto" required placeholder="Your Email">
-                </div>
-                <div class="form-field">
-                    <textarea name="message" rows="5" required placeholder="Your Message…"></textarea>
-                </div>
-                <input type="hidden" name="_subject" value="Portfolio Contact">
-                <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
+            <form
+              action="https://formspree.io/f/xkopjgdn"
+              method="POST"
+              class="contact-form reveal"
+            >
+              <div class="form-field">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="form-field">
+                <input
+                  type="email"
+                  name="_replyto"
+                  required
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="form-field">
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Your Message…"
+                ></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="Portfolio Contact" />
+              <button
+                type="submit"
+                class="btn btn-solid"
+                style="width: 100%; justify-content: center"
+              >
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
             </form>
+          </div>
         </div>
-    </div>
-</section>
-</main>
+      </section>
+    </main>
 
-<footer class="footer">
-    <div class="footer-inner">
+    <footer class="footer">
+      <div class="footer-inner">
         <div class="footer-socials">
-            <a href="https://github.com/sarairatni" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/sara-iratni" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:ms_iratni@esi.dz" title="Email"><i class="fas fa-envelope"></i></a>
+          <a
+            href="https://github.com/sarairatni"
+            target="_blank"
+            rel="noopener"
+            title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/sara-iratni"
+            target="_blank"
+            rel="noopener"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:ms_iratni@esi.dz" title="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
         </div>
         <p>Designed &amp; Built by <strong>Sara Iratni</strong> · 2025</p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

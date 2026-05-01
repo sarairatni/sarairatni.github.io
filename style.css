@@ -29,7 +29,7 @@ body {
     background: var(--bg);
     color: var(--text-b);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip; /* clip (not hidden) so position:sticky works on children */
 }
 h1, h2, h3, h4, .logo, .logo-pill, .hero-name, .s-title, .stat-n, .honor-num {
     font-family: 'Syne', sans-serif;
@@ -80,14 +80,15 @@ body.on-dark .cursor-dot  { background: #fff; }
 /* ══════════════════════════════════════
    SECTION STACKING — slide-over effect
 ══════════════════════════════════════ */
-main > section { position: relative; }
+main > section { position: sticky; top: 0; }
 main > section:not(#hero) {
     border-radius: 22px 22px 0 0;
     margin-top: -22px;
     box-shadow: 0 -8px 40px rgba(0,0,0,0.12);
     overflow: hidden;
+    min-height: 100vh;
 }
-#hero      { z-index: 1; }
+#hero      { z-index: 1; height: 100vh; overflow: hidden; }
 #about     { z-index: 2; }
 #education { z-index: 3; }
 #skills    { z-index: 4; }
@@ -282,7 +283,7 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
 .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
-    padding-top: 80px; position: relative; overflow: hidden;
+    padding-top: 80px; overflow: hidden;
     /* Subtle dot grid — structural, not vibe */
     background-color: var(--bg);
     background-image: radial-gradient(circle, rgba(180,83,9,0.08) 1px, transparent 1px);
@@ -411,7 +412,6 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
    ABOUT
 ══════════════════════════════════════ */
 .about-section {
-    position: relative;
     background: var(--bg-alt); /* overridden by .dark */
 }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -485,7 +485,8 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
 }
 .proj-featured-visual {
     min-height: 360px;
-    display: flex; align-items: center; justify-content: center; padding: 2rem;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2.5rem; background: var(--bg-alt);
 }
 .derma-visual { background: #1e1b4b; }
 .proj-featured-info {
@@ -500,6 +501,19 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
 .proj-featured-info h3 { font-size: 2rem; font-weight: 900; color: var(--text-h); margin-bottom: 1rem; }
 .proj-featured-info p { color: var(--text-b); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem; }
 
+/* Project images */
+.proj-visual img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain; display: block;
+}
+.proj-featured-visual img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain; display: block;
+    border-radius: 10px;
+}
+
 /* Grid */
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 .proj-card {
@@ -508,7 +522,11 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
     box-shadow: var(--sh-sm); transition: var(--t);
 }
 .proj-card:hover { transform: translateY(-7px); box-shadow: var(--sh-lg); border-color: rgba(180,83,9,0.2); }
-.proj-visual { height: 185px; position: relative; overflow: hidden; }
+.proj-visual {
+    height: 220px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.4rem; background: var(--bg-alt);
+}
 .proj-info { padding: 1.4rem; }
 .proj-info h3 { font-size: 1.05rem; font-weight: 800; color: var(--text-h); margin-bottom: 0.5rem; }
 .proj-info p { font-size: 0.88rem; color: var(--text-b); line-height: 1.6; margin-bottom: 1rem; }
@@ -912,6 +930,10 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
     .edu-item { grid-template-columns: 56px 28px 1fr; }
 }
 @media (max-width: 768px) {
+    /* disable sticky stacking on mobile — scroll normally */
+    main > section { position: relative; }
+    main > section:not(#hero) { min-height: auto; }
+    #hero { height: auto; overflow: visible; }
     /* pill nav: hide desktop items, show burger */
     .nav-items-wrap { display: none; }
     .nav-hire { display: none; }
