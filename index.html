@@ -6,13 +6,15 @@
     <title>Sara Iratni | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
+<div id="scrollProgress"></div>
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAVBAR — floating pill -->
 <header class="navbar" id="navbar">
@@ -83,6 +85,33 @@
             </div>
         </div>
     </div>
+    <!-- Ticker strip — full-width tech band at hero bottom -->
+    <div class="ticker-strip" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item"><i class="devicon-python-plain colored"></i>Python</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-flutter-plain colored"></i>Flutter</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-django-plain colored"></i>Django</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="fas fa-link" style="color:#16a34a"></i>LangChain</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-typescript-plain colored"></i>TypeScript</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-nextjs-original"></i>Next.js</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-docker-plain colored"></i>Docker</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="fas fa-robot" style="color:#b45309"></i>LLMs</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-dart-plain colored"></i>Dart</span><span class="ticker-sep">◆</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item"><i class="devicon-python-plain colored"></i>Python</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-flutter-plain colored"></i>Flutter</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-django-plain colored"></i>Django</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="fas fa-link" style="color:#16a34a"></i>LangChain</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-typescript-plain colored"></i>TypeScript</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-nextjs-original"></i>Next.js</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-docker-plain colored"></i>Docker</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="fas fa-robot" style="color:#b45309"></i>LLMs</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item"><i class="devicon-dart-plain colored"></i>Dart</span><span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
     <div class="hero-scroll" aria-hidden="true">
         <div class="mouse"><div class="mouse-wheel"></div></div>
         <span>Scroll</span>
@@ -92,7 +121,7 @@
 <!-- ═══════════════════════════════════════
      ABOUT
 ═══════════════════════════════════════ -->
-<section id="about" class="about-section alt-bg reveal-section">
+<section id="about" class="about-section dark">
     <div class="section-wrap">
         <div class="chip">01 — About</div>
         <h2 class="s-title">About Me</h2>
@@ -128,7 +157,7 @@
 <!-- ═══════════════════════════════════════
      EDUCATION
 ═══════════════════════════════════════ -->
-<section id="education" class="edu-section reveal-section">
+<section id="education" class="edu-section">
     <div class="section-wrap">
         <div class="chip">02 — Education</div>
         <h2 class="s-title">Academic Background</h2>
@@ -220,7 +249,7 @@
 <!-- ═══════════════════════════════════════
      SKILLS
 ═══════════════════════════════════════ -->
-<section id="skills" class="skills-section reveal-section">
+<section id="skills" class="skills-section dark">
     <div class="section-wrap">
         <div class="chip">03 — Skills</div>
         <h2 class="s-title">Skills &amp; Technologies</h2>
@@ -231,7 +260,7 @@
                 <div class="tech-grid">
                     <div class="tech-box reveal"><i class="devicon-python-plain colored"></i><span>Python</span></div>
                     <div class="tech-box reveal"><i class="fas fa-link" style="color:#16a34a"></i><span>LangChain</span></div>
-                    <div class="tech-box reveal"><i class="fas fa-robot" style="color:#7c3aed"></i><span>Groq / LLMs</span></div>
+                    <div class="tech-box reveal"><i class="fas fa-robot" style="color:#b45309"></i><span>Groq / LLMs</span></div>
                     <div class="tech-box reveal"><i class="fas fa-database" style="color:#dc2626"></i><span>ChromaDB</span></div>
                     <div class="tech-box reveal"><i class="fas fa-search" style="color:#2563eb"></i><span>BERT</span></div>
                     <div class="tech-box reveal"><i class="fas fa-project-diagram" style="color:#0891b2"></i><span>pgvector</span></div>
@@ -278,7 +307,7 @@
 <!-- ═══════════════════════════════════════
      PROJECTS
 ═══════════════════════════════════════ -->
-<section id="projects" class="projects-section alt-bg reveal-section">
+<section id="projects" class="projects-section alt-bg">
     <div class="section-wrap">
         <div class="chip">04 — Work</div>
         <h2 class="s-title">Featured Projects</h2>
@@ -472,7 +501,7 @@
 <!-- ═══════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════ -->
-<section id="contact" class="contact-section reveal-section">
+<section id="contact" class="contact-section dark">
     <div class="section-wrap">
         <div class="chip">05 — Contact</div>
         <h2 class="s-title">Get In Touch</h2>
