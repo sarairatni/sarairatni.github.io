@@ -75,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function setSectionTops() {
         const vh = window.innerHeight;
         document.querySelectorAll('main > section').forEach(section => {
+            if (getComputedStyle(section).position !== 'sticky') {
+                section.style.top = '';
+                return;
+            }
             const h = section.offsetHeight;
             section.style.top = h > vh ? `${vh - h}px` : '0px';
         });

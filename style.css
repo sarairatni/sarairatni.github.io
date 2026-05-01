@@ -290,7 +290,7 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
     background-size: 32px 32px;
 }
 .hero-inner {
-    max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+    max-width: 1200px; margin: 0 auto; padding: 0 2rem 5rem;
     display: grid; grid-template-columns: 1fr 1fr;
     align-items: center; gap: 4rem;
     min-height: calc(100vh - 80px);
@@ -940,12 +940,12 @@ section.dark .btn-ghost:hover { background: #fbbf24; color: #18120a; }
     .nav-burger { display: flex; }
     .navbar { padding: 0.8rem 1rem; align-items: flex-end; }
 
-    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 1.2rem; }
     .hero-right { order: -1; }
-    .photo-orbit { width: 280px; height: 280px; }
-    .orbit-1 { width: 245px; height: 245px; }
-    .orbit-2 { width: 285px; height: 285px; }
-    .photo-blob { width: 200px; height: 200px; }
+    .photo-orbit { width: 200px; height: 200px; }
+    .orbit-1 { width: 175px; height: 175px; }
+    .orbit-2 { width: 205px; height: 205px; }
+    .photo-blob { width: 145px; height: 145px; }
     .orbit-tag { display: none; }
     .hero-btns { justify-content: center; }
     .hero-social { justify-content: center; }
